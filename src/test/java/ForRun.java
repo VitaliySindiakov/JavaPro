@@ -15,7 +15,7 @@ public class ForRun {
 
     protected Users userOne = new Users(FIRST_USRNAME, 33);
     protected Users userTwo = new Users(SECOND_USRNAME, 22);
-    protected Cash cashUah = new Cash(49000d, 2000.0D, 1000d, userOne.getName(), userOne);
+    protected Cash cash = new Cash(49000d, 2000.0D, 1000d, userOne.getName(), userOne);
 
     @Test
     public void startTransaction() {
@@ -24,7 +24,7 @@ public class ForRun {
             entityManager = entityManagerFactory.createEntityManager();
             doTransaction(userOne);
             doTransaction(userTwo);
-            doTransaction(cashUah);
+            doTransaction(cash);
             showAllUsers();
             transferMoney("UAH", "USD", 40000d, getUserByName(FIRST_USRNAME));
             showCash();
